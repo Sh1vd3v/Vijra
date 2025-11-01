@@ -17,18 +17,21 @@ export default function CategorySection() {
   ];
 
   return (
-    <>
-      <div className="products-header flex justify-center items-center py-8">
-        <p className="text-3xl font-bold text-blue-700">Products</p>
+    <section id="products" className="py-16 px-6 bg-gray-50">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold text-blue-700">Products</h2>
+        <p className="text-gray-600 mt-2">
+          Explore our wide range of healthcare solutions
+        </p>
       </div>
-      <section
-        id="products"
-        className="flex flex-wrap justify-center gap-10 py-12 px-6"
-      >
+
+      {/* Categories Grid */}
+      <div className="flex flex-wrap justify-center gap-10">
         {categories.map((item, i) => (
           <div
             key={i}
-            className="w-64 h-48 shadow-md rounded-2xl flex flex-col justify-center items-center hover:shadow-lg hover:scale-105 transition-transform"
+            className="w-64 h-48 shadow-md rounded-2xl flex flex-col justify-center items-center bg-white hover:shadow-lg hover:scale-105 transition-transform"
           >
             <h3 className="text-xl font-semibold text-blue-700">{item.name}</h3>
             <p className="mt-2 text-sm text-gray-600 text-center px-4">
@@ -36,7 +39,7 @@ export default function CategorySection() {
             </p>
           </div>
         ))}
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
